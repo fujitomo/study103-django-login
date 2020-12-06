@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'middleware.auth.authMiddleware',
+    'middleware.logincheck.LoginRequiredMiddleware',
     # 'user_sessions.middleware.SessionMiddleware',  # セッション管理用
 ]
 

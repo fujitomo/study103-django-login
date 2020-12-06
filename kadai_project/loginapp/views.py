@@ -3,11 +3,12 @@ from django_tables2 import SingleTableView
 from .models import KimetsuCharactorModel
 from django.views.generic import CreateView
 from django.urls import reverse_lazy
-from .forms import KimetsuCharactorForm
+from .forms import KimetsuCharactorForm, LoginForm
 from .tables import KimetsuCharactorTable  # new
 
 from django.views.generic.edit import UpdateView
 from django.urls import reverse
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 class CharactorCreaterView(CreateView):
@@ -41,3 +42,14 @@ class CharactorListView(SingleTableView):
     table_pagination = {
         'per_page': 3,
     }
+
+
+class Login(LoginView):
+    """ログインページ"""
+    form_class = LoginForm
+    template_name = 'login.html'
+
+
+class Logout(LogoutView):
+    """ログアウトページ"""
+    template_name = 'login.html'

@@ -1,6 +1,7 @@
 from django import forms
 from .models import KimetsuCharactorModel, SexModel
 from .widgets import FileInputWithPreview
+from django.contrib.auth.forms import AuthenticationForm
 
 
 class KimetsuCharactorForm(forms.ModelForm):
@@ -24,3 +25,13 @@ class KimetsuCharactorForm(forms.ModelForm):
         widgets = {
             'image': FileInputWithPreview,
         }
+
+
+class LoginForm(AuthenticationForm):
+    """ログインフォーム"""
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['placeholder'] = field.label
