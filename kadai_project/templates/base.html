@@ -1,0 +1,77 @@
+<!doctype html>
+{% load static %}
+<html lang="ja">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <div class="orm-area">
+    {% block customcss %}
+    {% endblock customcss %}
+  </div>
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  <link href="{% static 'reset.css' %}" rel="stylesheet">
+  <script type="text/javascript" src="{% static 'preview.js' %}"></script>
+  <title>課題2 | Django</title>
+
+</head>
+
+<body>
+
+  <div class='container-layout'>
+    <div class="header-title">
+      <div class="mainTitle">
+        <h1 class="inline">課題3 | Django</h1>
+        <div class="subTitle">
+          <h2> ~{% block header %}
+            {% endblock header %}~
+          </h2>
+        </div>
+      </div>
+      <div class="login-info">
+        {% if user.is_authenticated %}
+        <p class="loginuser">ユーザ名：{{ user.get_username }}</p>
+        {% endif %}
+        <div class="btn-position">
+          <a class="btn btn-primary logout-potion" href="{% url 'logout' %}">ログアウト</a>
+        </div>
+      </div>
+    </div>
+    <div class="container-original">
+      <div class="navi-layout">
+        <navi>
+          <ul class="accordion nav flex-column">
+            <li class="nav-item">
+              <a href="#collapse-menu1" class="nav-link navi-fontcolor1" data-toggle="collapse">鬼滅の刃</a>
+              <!-- classにcollapseを追加するとアコーディオンメニューになる -->
+              <ul id="collapse-menu1" class="list-unstyled pl-3" data-parent=".accordion">
+                <li><a href="{% url 'create' %}" class="nav-link navi-fontcolor2">キャラクター登録 </a></li>
+                <li><a href="{% url 'list' %}" class="nav-link navi-fontcolor2">キャラクター一覧</a></li>
+              </ul>
+            </li>
+          </ul>
+          </nav>
+      </div>
+      <div class="content-origin">
+        {% block content %}
+        {% endblock content %}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+  integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</html>

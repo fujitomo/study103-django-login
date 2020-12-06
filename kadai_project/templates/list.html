@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% csrf_token %} 
+{% load render_table from django_tables2 %}
+
+{% block header %}
+一覧
+{% endblock header %}
+
+{% block content %}
+
+{% render_table table %}
+
+{% endblock content %}

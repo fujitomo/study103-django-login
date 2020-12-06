@@ -1,0 +1,123 @@
+html,
+body {
+ 
+}
+
+.container-layout {
+  background-color: #2792c3;
+}
+
+ /*ヘッダー-------------------------------------------------------------------------------------------------------------------------*/
+ .header-title {
+  color: black;
+
+  font-size: 50px;
+  padding: 13px 0;
+  background-color: #cc7eb1;
+  height: 135px;
+  font-weight: bold;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header-title .mainTitle {
+  width: 68%;
+  text-align: center;
+  -webkit-text-stroke: 1px #FFF;  
+}
+
+.header-title .login-info{
+  width: 353px;
+  font-size: 11px;
+  display:flex;
+  justify-content: flex-end;
+}
+
+.header-title .login-info .loginuser{
+  width: 257px;
+  font-size: 20px;
+  margin: 8px 0px;
+}
+
+.header-title .login-info .btn-position{
+  width: 257px;
+}
+
+ /*サイドメニュー-------------------------------------------------------------------------------------------------------------------------*/
+.navi-layout {
+  height: 520px;
+  width: 200px;
+  background-color: #4a488c;
+  color: black;
+}
+
+.navi-layout .navi-fontcolor1 {
+  color: white;
+  font-size: 30px;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+.navi-layout .navi-fontcolor2 {
+  color: white;
+  font-size: 15px;
+  font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+ /*コンテンツ-------------------------------------------------------------------------------------------------------------------------*/
+.container-original {
+  display: flex;
+}
+
+.content-origin {
+  width: 72%;
+}
+
+/*登録/更新画面-------------------------------------------------------------------------------------------------------------------------*/
+.form-area {
+  margin: 50px 50px;
+  width: 55%;
+}
+
+.form-area .control {
+  margin: 31px 0;
+  font-size:16px;
+  display: flex;
+  align-items: center;
+  /* 高さに合わせてボックスの上下中央に配置 */
+}
+
+.form-area .padding-labelinput {
+  padding-right: 30px;
+}
+
+.form-area .table-origin {
+  width: 1000px;
+  margin: 90px 50px;
+  text-align: center;
+}
+
+.form-area .btn-origin{
+  display: block;
+  width: 100px;
+}
+
+/*登録画面-------------------------------------------------------------------------------------------------------------------------*/
+
+.table-white {
+  background-color: white;
+}
+
+/*更新画面-------------------------------------------------------------------------------------------------------------------------*/
+.default-preview-img {
+  max-width: 8%;
+  height: 10px;
+}
+.image-layout{
+  margin-left: 127px;
+}
+#image-preview{
+  max-width: 20%;
+  height: 100px;
+}

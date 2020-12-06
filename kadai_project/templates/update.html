@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+更新
+{% endblock header %}
+
+{% block content %}
+<form action="" method="POST" enctype='multipart/form-data'>{% csrf_token %}
+    <div class="form-area">
+        <p class="control">
+            <label class="padding-labelinput" for="name">{{ form.name.label_tag }}</label>
+            {{ form.name }}
+                {{ form.name.errors }}
+        </p>
+        <p class="control">
+            <label class="padding-labelinput" for="sexRadios">{{ form.sex_id.label_tag }}</label>
+            {{ form.sex_id }}
+            {{ form.sex_id.errors }}
+        </p>
+        <p class="control">
+            <label class="padding-labelinput" for="characteristic">{{ form.characteristic.label_tag }}</label>
+            {{ form.characteristic }}
+            {{ form.characteristic.errors }}
+        </p>
+        <p class="control">
+            <label class="padding-labelinput" for="image">{{ form.image.label_tag }}</label>
+            <img id="image-preview" ><!-- プレビュー要素をここにおいたよ -->
+            <div class="image-layout">
+                {{ form.image }}
+                {{ form.image.errors }}
+            </div>
+        </p>
+        <br><br>
+        <button type='submit' type="button" class="btn btn-success btn-origin">登録</button>
+
+    </div>
+</form>
+{% endblock content %}
